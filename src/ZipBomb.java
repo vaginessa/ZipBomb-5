@@ -27,7 +27,15 @@ public class ZipBomb implements Runnable{
             fileOutputStream.close();
         } catch (FileNotFoundException ex) {
             Logger.getLogger(ZipBomb.class.getName()).log(Level.SEVERE, null, ex);
+
         } catch (IOException ex) {
+        }
+        finally{
+            try {
+                fileOutputStream.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
